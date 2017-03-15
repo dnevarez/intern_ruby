@@ -1,11 +1,12 @@
 require "rubygems"
 require "bunny"
-require_relative "../workers/transformer"
+require_relative "../workers/instagram_transformer"
 
-class RabbitConnection
+class InstagramRabbitConnection
 
-  def initialize
+  def initialize(network)
     establish_connection
+    @network = network
   end
 
   def establish_connection
@@ -15,16 +16,15 @@ class RabbitConnection
     @conn.start
 
     @ch = @conn.create_channel
-    @receive = @ch.queue( "source", :auto_delete => false )
-    @send = @ch.queue( "destination", :auto_delete => false )
+    @receive = @ch.queue( "instagram_payload", :auto_delete => false )
+    @send = @ch.queue( "instagram_social_activity", :auto_delete => false )
     @exch = @ch.default_exchange
   end
 
   def get_message
     @payload = nil
     @receive.subscribe do |delivery_info, metadata, payload|
-      # puts "Input: #{payload}"
-      tr = Transformer.new(payload)
+      tr = InstagramTransformer.new(payload)
       message = tr.transform
       publish_message message.inspect
     end
@@ -37,7 +37,7 @@ class RabbitConnection
   end
 end
 
-class TestingRabbitConnection < RabbitConnection
+class TestInstagramRabbitConnection < InstagramRabbitConnection
   def publish_mock_message
     t = TestPayload.new
     payload = t.test_input("instagram")

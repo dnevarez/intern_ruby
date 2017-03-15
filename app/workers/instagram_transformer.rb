@@ -1,6 +1,6 @@
 require "date"
 
-class Transformer
+class InstagramTransformer
 
   def initialize(payload)
     @payload = eval(payload)
