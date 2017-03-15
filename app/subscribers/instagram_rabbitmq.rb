@@ -39,8 +39,7 @@ end
 
 class TestInstagramRabbitConnection < InstagramRabbitConnection
   def publish_mock_message
-    t = TestPayload.new
-    payload = t.test_input("instagram")
+    payload = get_mock
     @exch.publish(payload, :routing_key => @receive.name)
   end
 
@@ -50,5 +49,15 @@ class TestInstagramRabbitConnection < InstagramRabbitConnection
       @payload = payload
     end
     @payload
+  end
+
+  def get_mock
+    message = ""
+    File.open "test/fixtures/files/instagram_payload.json", "r" do |f|
+      f.each_line do |line|
+        message += line
+      end
+    end
+    message
   end
 end

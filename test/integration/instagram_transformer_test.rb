@@ -1,10 +1,8 @@
 require 'test_helper'
-require_relative "test_payload"
 require_relative "../../app/subscribers/instagram_rabbitmq"
 
 class InstagramTransformerTest < ActionDispatch::IntegrationTest
   test "instagram_transformation" do
-    t = TestPayload.new
     r = TestInstagramRabbitConnection.new("instagram")
     r.publish_mock_message
     r.get_message
@@ -12,11 +10,11 @@ class InstagramTransformerTest < ActionDispatch::IntegrationTest
     while payload == nil
       payload = r.get_final
     end
-    assert_equal(t.test_output("instagram"), payload)
+    assert_equal(output("instagram"), payload)
   end
 
   test "instagram_transformation_fields" do
-    test_payload = TestPayload.new.test_input "instagram"
+    test_payload = input "instagram"
     transformer = InstagramTransformer.new(test_payload)
     message = transformer.transform
     assert_equal "https://www.instagram.com/p/BGKKqSeoadh/", message[:activity_url]
