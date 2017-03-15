@@ -37,3 +37,18 @@ class RabbitConnection
   end
 end
 
+class TestingRabbitConnection < RabbitConnection
+  def publish_mock_message
+    t = TestPayload.new
+    payload = t.test_input("instagram")
+    @exch.publish(payload, :routing_key => @receive.name)
+  end
+
+  def get_final()
+    @payload = nil
+    @send.subscribe do |delivery_info, metadata, payload|
+      @payload = payload
+    end
+    @payload
+  end
+end

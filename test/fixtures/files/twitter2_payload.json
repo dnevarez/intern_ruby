@@ -1,0 +1,124 @@
+{
+  "id": "tag:search.twitter.com,2005:794169597222064128",
+  "objectType": "activity",
+  "actor": {
+    "objectType": "person",
+    "id": "id:twitter.com:18141787",
+    "link": "http://www.twitter.com/JenVento",
+    "displayName": "Jennifer Vento",
+    "postedTime": "2008-12-15T18:00:57.000Z",
+    "image": "https://pbs.twimg.com/profile_images/378800000578979749/4ea77b8e30565b5bf1222b9042ae4e5f_normal.jpeg",
+    "summary": "Managing Director, Women Online/ @theMissionList, @PDMteam alum; ex-music & film biz.",
+    "links": [
+      {
+        "href": "http://wearewomenonline.com",
+        "rel": "me"
+      }
+    ],
+    "friendsCount": 456,
+    "followersCount": 459,
+    "listedCount": 29,
+    "statusesCount": 603,
+    "twitterTimeZone": "Eastern Time (US & Canada)",
+    "verified": false,
+    "utcOffset": "-14400",
+    "preferredUsername": "JenVento",
+    "languages": [
+      "en"
+    ],
+    "location": {
+      "objectType": "place",
+      "displayName": "Brooklyn, NY"
+    },
+    "favoritesCount": 31
+  },
+  "verb": "post",
+  "postedTime": "2016-11-03T13:29:21.000Z",
+  "generator": {
+    "displayName": "Twitter Web Client",
+    "link": "http://twitter.com"
+  },
+  "provider": {
+    "objectType": "service",
+    "displayName": "Twitter",
+    "link": "http://www.twitter.com"
+  },
+  "link": "http://twitter.com/JenVento/statuses/794169597222064128",
+  "body": "How women could vote Hillary Clinton into the White House https://t.co/jnFqk44nr4 #imwithher",
+  "object": {
+    "objectType": "note",
+    "id": "object:search.twitter.com,2005:794169597222064128",
+    "summary": "How women could vote Hillary Clinton into the White House https://t.co/jnFqk44nr4 #imwithher",
+    "link": "http://twitter.com/JenVento/statuses/794169597222064128",
+    "postedTime": "2016-11-03T13:29:21.000Z"
+  },
+  "favoritesCount": 0,
+  "twitter_entities": {
+    "hashtags": [
+      {
+        "text": "imwithher",
+        "indices": [
+          82,
+          92
+        ]
+      }
+    ],
+    "user_mentions": [],
+    "symbols": [],
+    "urls": [
+      {
+        "url": "https://t.co/jnFqk44nr4",
+        "expanded_url": "https://www.theguardian.com/us-news/2016/nov/03/hillary-clinton-how-women-voters-could-win-election?CMP=share_btn_tw",
+        "display_url": "theguardian.com/us-news/2016/n…",
+        "indices": [
+          58,
+          81
+        ]
+      }
+    ]
+  },
+  "twitter_filter_level": "low",
+  "twitter_lang": "en",
+  "retweetCount": 0,
+  "gnip": {
+    "matching_rules": [
+      {
+        "tag": "1WI60HgbneBVvjyh3rAoCQ"
+      },
+      {
+        "tag": "NYwVqfg_TLnedp5AhSHrkg"
+      }
+    ],
+    "urls": [
+      {
+        "url": "https://t.co/jnFqk44nr4",
+        "expanded_url": "https://www.theguardian.com/us-news/2016/nov/03/hillary-clinton-how-women-voters-could-win-election?CMP=share_btn_tw",
+        "expanded_status": 200
+      }
+    ],
+    "klout_score": 46,
+    "language": {
+      "value": "en"
+    },
+    "profileLocations": [
+      {
+        "objectType": "place",
+        "geo": {
+          "type": "point",
+          "coordinates": [
+            -73.94958,
+            40.6501
+          ]
+        },
+        "address": {
+          "country": "United States",
+          "countryCode": "US",
+          "locality": "Brooklyn",
+          "region": "New York",
+          "subRegion": "Kings County"
+        },
+        "displayName": "Brooklyn, New York, United States"
+      }
+    ]
+  }
+}
