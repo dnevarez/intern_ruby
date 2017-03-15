@@ -1,6 +1,5 @@
 require "rubygems"
 require "bunny"
-require_relative "../workers/test_payload"
 require_relative "../workers/transformer"
 
 class RabbitConnection
@@ -21,12 +20,6 @@ class RabbitConnection
     @exch = @ch.default_exchange
   end
 
-  def publish_mock_message
-    t = TestPayload.new
-    payload = t.test_input.inspect
-    @exch.publish(payload, :routing_key => @receive.name)
-  end
-
   def get_message
     @payload = nil
     @receive.subscribe do |delivery_info, metadata, payload|
@@ -42,12 +35,5 @@ class RabbitConnection
   def publish_message(payload)
     @exch.publish(payload, :routing_key => @send.name)
   end
-
-  def get_final()
-    @payload = nil
-      @send.subscribe do |delivery_info, metadata, payload|
-        @payload = payload
-      end
-    @payload
-    end
 end
+
